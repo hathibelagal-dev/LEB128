@@ -1,6 +1,6 @@
 # LEB128 Encoder/Decoder
 
-This package offers easy-to-use methods that let you encode and decode LEB128 data. LEB128, which is short **Little Endian Base 128**, is a code compression algorithm that is used in a variety of file formats. The most well-known are WebAssembly's binary `.wasm` and Android's `.dex` files.
+This package offers easy-to-use methods that let you encode and decode LEB128 data. LEB128, which is short for **Little Endian Base 128**, is a code compression algorithm that is used in a variety of file formats. The most well-known are WebAssembly's binary `.wasm` and Android's `.dex` files.
 
 ## Usage
 
