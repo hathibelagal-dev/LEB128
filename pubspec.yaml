@@ -1,7 +1,6 @@
 name: leb128
 description: A Dart package that can read and write numbers in the LEB128, short for Little Endian Base 128, format.
-version: 1.0.0
-author: Ashraff Hathibelagal <hathi@progur.com>
+version: 1.0.1
 homepage: https://github.com/hathibelagal-dev/LEB128
 
 environment:
