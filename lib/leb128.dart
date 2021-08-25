@@ -54,7 +54,7 @@ class Leb128 {
   /// LEB128 unsigned integer. The size of the integer is decided automatically.
   static Uint8List encodeUnsigned(int value) {
     int size = (value.toRadixString(2).length / 7.0).ceil();
-    List parts = new List<int>();
+    List<int> parts = new List.empty(growable: true);
     int i = 0;
     while (i < size) {
       int part = value & 0x7f;
@@ -70,7 +70,7 @@ class Leb128 {
   /// LEB128 signed integer. The size of the integer is decided automatically.
   static Uint8List encodeSigned(int value) {
     var more = true;
-    List parts = new List<int>();
+    List<int> parts = new List.empty(growable: true);
     while (more) {
       var byte = value & 0x7f;
       value >>= 7;
@@ -89,7 +89,7 @@ class Leb128 {
   /// Utility method that decodes a varint7 value. Using this is
   /// easier because you don't have to convert your byte into a
   /// [Uint8List] object first.
-  static decodeVarint7(int byte) {
+  static int decodeVarint7(int byte) {
     Uint8List input = Uint8List.fromList([byte]);
     return decodeSigned(input);
   }
@@ -97,7 +97,7 @@ class Leb128 {
   /// Utility method that decodes a varuint7 value. Using this is
   /// easier because you don't have to convert your byte into a
   /// [Uint8List] object first.
-  static decodeVaruint7(int byte) {
+  static int decodeVaruint7(int byte) {
     Uint8List input = Uint8List.fromList([byte]);
     return decodeUnsigned(input);
   }
