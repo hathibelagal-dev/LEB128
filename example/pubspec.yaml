@@ -1,19 +1,12 @@
 name: example
-description: A new Flutter project.
-
-version: 1.0.0+1
+description: A Dart example program that can read and write numbers in the LEB128, short for Little Endian Base 128, format.
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  flutter:
-    sdk: flutter
-  leb128: ^0.9.1
+  leb128:
+    path: ..
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-
-flutter:
-  uses-material-design: true
+  test: ^1.17.10
