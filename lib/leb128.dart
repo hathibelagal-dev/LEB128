@@ -54,7 +54,7 @@ class Leb128 {
   /// LEB128 unsigned integer. The size of the integer is decided automatically.
   static Uint8List encodeUnsigned(int value) {
     int size = (value.toRadixString(2).length / 7.0).ceil();
-    List parts = new List<int>();
+    List<int> parts = List.empty(growable: true);
     int i = 0;
     while (i < size) {
       int part = value & 0x7f;
@@ -69,10 +69,10 @@ class Leb128 {
   /// Converts an ordinary integer into a list of bytes that contains an
   /// LEB128 signed integer. The size of the integer is decided automatically.
   static Uint8List encodeSigned(int value) {
-    var more = true;
-    List parts = new List<int>();
+    bool more = true;
+    List<int> parts = List.empty(growable: true);
     while (more) {
-      var byte = value & 0x7f;
+      int byte = value & 0x7f;
       value >>= 7;
       if (value == 0 && (byte & 0x40) == 0)
         more = false;
